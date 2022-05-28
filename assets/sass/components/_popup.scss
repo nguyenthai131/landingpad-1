@@ -1,0 +1,125 @@
+
+
+.popup {
+    width: 100% ;
+    height: 100vh ;
+    position: fixed;
+    top: 0 ;
+    left: 0 ;
+    z-index: 2000 ;
+    background-color: rgba($color-black , .65);
+    visibility: hidden ;
+    opacity: 0 ;  
+    transition: all .3s ;  
+
+}
+
+.popup-box {
+    position: absolute ;
+    top: 50% ;
+    left: 50% ;
+    transform: translate(-50% , -50%) scale(.5);
+    width: 75% ;
+    height: 60rem ;
+    border-radius: 5rem ;
+    box-shadow: .5rem .8rem 1.5rem .1rem rgba($color-black , .2);
+    overflow: hidden ;
+    background-color: $color-white ;
+    display: flex ;
+    opacity: 0 ;
+    transition: all .6s .2s ;
+
+    @include respond(phone) {
+        height: 90% ;
+        display: table ;
+    }
+
+
+
+
+    &__left {
+        display: flex ;
+        height: 100% ;
+        flex-direction: column ;
+        flex-grow: 1 ;
+        flex-shrink: 0 ;
+        width: 34% ;
+
+        @include respond(phone) {
+            float: left ;
+            width: 30% ;
+        }
+
+    }
+
+
+    &__picture {
+        width: 100% ;
+        flex-grow: 1 ;
+        height: 50% ;
+        object-fit: cover;
+        flex-shrink: 0 ;
+
+        @include respond(phone) {
+            height: auto ;
+        }
+        
+
+    }
+
+    &__close {
+        position: absolute ;
+        top: 3rem ;
+        right: 4rem ;
+        display: inline-block ;
+        width: 3rem ;
+        height: 3rem ;
+        line-height: 1rem ;
+        font-size: 3rem ;
+        cursor: pointer;
+        outline: none ;
+        border: none;
+        background-color: transparent ;
+        color: $color-grey-dark ;
+
+        &:hover {
+            color: $color-primary-medium ;
+
+        }
+
+        @include respond(phone) {
+            top: 1.5rem ;
+            right: 1.5rem ;
+        }
+
+
+    }
+
+    &__right {
+        flex-grow: 2;
+        display: flex ;
+        padding: 5rem ;
+        flex-direction: column ;
+        justify-content: center ;
+
+        @include respond(phone) {
+            padding: 2rem ;
+        }
+
+
+    }
+
+    &__paragraph {
+        text-align: justify ;
+        column-count: 2 ;
+        column-gap: 4rem ;
+        column-rule: .1rem solid rgba($color-black , .2) ;
+        font-size: 1.5rem ;
+        color: $color-grey-dark ;
+        hyphens: auto ;
+
+    }
+
+}
+
+

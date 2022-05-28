@@ -1,0 +1,203 @@
+
+
+
+
+.nav {
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    width: 100% ;
+    z-index: 100 ;
+
+
+    &__input {
+        visibility: hidden ;
+    }
+
+    &__button {
+        position: fixed ;
+        top: 5rem ;
+        right: 5rem ;
+        display: inline-block ;
+        width: 7rem ;
+        height: 7rem ;
+        border-radius: 50%;
+        background-color: $color-white ;
+        box-shadow: .1rem .5rem 1.5rem rgba($color-black , .2) ;
+        cursor: pointer;
+        z-index: 2000 ;
+
+        @include respond(phone) {
+            top: 2rem ;
+            right: 2rem ;
+        }
+
+        @include respond(big-desktop) {
+            width: 6rem ;
+            height: 6rem ;
+        }
+
+    }
+
+  
+
+    &__icon {
+        display: inline-block ;
+        position: absolute;
+        top: 50% ;
+        left: 50% ;
+        transform: translate(-50% , -50%);
+        width: 3.5rem ;
+        height: .25rem ;
+        background-color: rgba($color-grey-dark , .7) ;
+
+        @include respond(big-desktop) {
+            width: 3rem ;
+        }
+
+
+        &::before ,
+        &::after {
+            display: block;
+            content: '';
+            width: 100% ;
+            height: 100% ;
+            background-color: inherit ;
+            position: absolute ;
+            left: 0 ;
+            transition: all .2s ;
+        }
+
+        &::before {
+            top: -.8rem 
+        }
+
+        &::after {
+            top: .8rem ;
+        }
+
+    }
+
+    &__button:hover &__icon {
+
+        &::before {
+            top: -1rem 
+        }
+
+        &::after {
+            top: 1rem ;
+        }
+
+
+    }
+
+
+    &__input:checked ~ &__button &__icon {
+        visibility: hidden;
+
+        &::before ,
+        &::after {
+            visibility: visible;
+        }
+
+        &::before {
+            top: 0 ;
+            transform: rotate(135deg);
+
+        }
+
+        &::after {
+            top: 0 ;
+            transform: rotate(-135deg);
+
+        }
+
+
+    }
+
+    &__background {
+        position: fixed ;
+        top: 7rem ;
+        right: 7rem ;
+        width: 3rem ;
+        height: 3rem ;
+        border-radius: 50% ;
+        background-image: linear-gradient(to left ,
+        $color-primary-light ,
+        $color-primary-dark);
+        z-index: 1000 ;
+        transition: all .7s ease;
+
+
+        @include respond(phone) {
+            top:4rem ;
+            right: 4rem ;
+        }
+
+    }
+
+    &__input:checked ~ &__background {
+        transform: scale(150);
+    }
+
+    &__menu {
+        position: fixed ;
+        top: 50% ;
+        left: 100% ;
+        transform: translate(-50% ,-50% );
+        z-index: 1500;
+        list-style: none ;
+        text-align: center ;
+        transition: all .4s ease-out ;
+        opacity: 0 ;
+        visibility: hidden;
+    }
+
+    &__input:checked ~ &__menu {
+        left: 50% ;
+        opacity: 1 ;
+        visibility: visible ;
+    }
+
+
+    &__item {
+
+        &:not(:first-child) {
+            margin-top: 4rem ;
+        }
+
+
+    }
+
+    &__link {
+
+        & ,
+        &:link ,
+        &:visited {
+            display: inline-block ;
+            font-size: 3.2rem ;
+            text-decoration: none ;
+            text-transform: uppercase ;
+            color: $color-white ;
+            font-weight: 300 ;
+            padding: 1rem 3rem ;
+            border-radius: 5rem ;
+            cursor: pointer;
+            background-image: radial-gradient(200% 250% ellipse at 150% ,
+            $color-white 50% ,
+            $color-white 50% ,
+            transparent 50.1% );
+            background-size: 252%;
+            transition: all .4s ;
+        }
+
+        &:hover {
+            color: $color-primary-medium ;
+            background-position: 100% ;
+            transform: translateX(2rem) scale(1.05);
+        }
+
+    }
+
+}
+

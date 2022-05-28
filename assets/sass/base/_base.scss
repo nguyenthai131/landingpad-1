@@ -1,0 +1,47 @@
+
+
+html {
+    font-family: 'Lato' , sans-serif;
+    font-size: 62.5% ;
+    text-rendering: optimizeLegibility ;
+
+    @include respond(tab-land) {
+        font-size: 56.25% ;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50% ;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75% ;
+    }
+}
+
+
+body {
+    font-size: 1.6rem  ;
+    line-height: 1.7 ;
+    box-sizing: border-box ;
+    padding: 2rem ;
+    font-weight: 400 ;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 1.4rem ;
+    }
+
+}
+
+
+
+* ,
+*::before ,
+*::after {
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: inherit ;
+}

@@ -1,0 +1,30 @@
+
+
+.skills-section {
+    width: 100% ;
+    height: 70rem ;
+    padding: 20rem 0 ;
+    margin-top: -10rem ;
+    background-image: linear-gradient(to bottom right ,
+    rgba($color-primary-light , .8) ,
+    rgba($color-primary-dark ,.8)) ,
+    url(../../img/background2.jpg);
+    background-size: cover ;
+    background-position: top ;
+    clip-path: ellipse(76% 49% at 50% 50%);
+
+
+    @include respond(tab-port) {
+        height: auto ;
+        padding: 20rem 0 ;
+    }
+
+    @include respond(phone) {
+        height: auto ;
+        padding: 20rem 0 ;
+        margin-top: -30rem ;
+    }
+
+}
+
+

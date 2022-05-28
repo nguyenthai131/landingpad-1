@@ -1,0 +1,158 @@
+.enroll {
+    margin: 0 auto;
+    width: 100%;
+    height: 50rem;
+    border-radius: 5rem;
+    background-image: radial-gradient(150% 200% ellipse at -15%,
+            rgba($color-white , .8) 50%,
+            transparent 50.1%),
+        url(../../img/background3.jpg);
+    background-size: cover;
+    padding: 5rem ;
+
+    @include respond(tab-port) {
+        width: 70%;
+        background-image: radial-gradient(150% 200% ellipse at 50%,
+                rgba($color-white , .8) 50%,
+                transparent 50.1%),
+            url(../../img/background3.jpg);
+
+    }
+
+    @include respond(phone) {
+        width: 96% ;
+    }
+
+
+}
+
+
+
+.enroll-form {
+    width: 35%;
+
+    @include respond(tab-port) {
+        width: 100% ;
+    }
+
+
+    &__info {
+        width: 100%;
+        position: relative;
+    }
+
+    &__info-input {
+        display: block;
+        width: 100%;
+        padding: 2rem;
+        height: 5rem;
+        border: none;
+        border-bottom: .3rem solid transparent;
+        outline: none;
+        color: rgba($color-black , .6);
+        border-radius: .1rem;
+        box-shadow: .1rem .5rem 1.5rem .1rem rgba($color-black , .2);
+        transition: .2s all;
+
+        &:invalid {
+            border-bottom: .3rem solid $color-secondary-dark;
+        }
+
+        &:placeholder-shown {
+            border-bottom: .3rem solid transparent;
+        }
+
+        &:focus {
+            border-bottom: .3rem solid $color-secondary-dark;
+        }
+
+        &:valid {
+            border-bottom: .3rem solid $color-primary-medium;
+        }
+
+    }
+
+    &__info-label {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        padding: 0 2rem;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    &__info-input:not(:placeholder-shown)~&__info-label {
+        transform: translateY(150%);
+        opacity: 1;
+    }
+
+
+    &__gender-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    &__radio-input {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__gender-box {
+        position: relative;
+        width: 55%;
+        cursor: pointer;
+    }
+
+    &__radio-label {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        padding-left: 5rem;
+        font-size: 1.7rem;
+        color: rgba($color-black , .65);
+    }
+
+    &__radio-button {
+        position: absolute;
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border-radius: 100%;
+        border: .5rem solid $color-primary-medium ;
+
+        &::after {
+            display: inline-block;
+            content: '';
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary-medium ;
+            transition: all .2s;
+            opacity: 0;
+        }
+
+
+    }
+
+    &__radio-input:checked~&__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+}

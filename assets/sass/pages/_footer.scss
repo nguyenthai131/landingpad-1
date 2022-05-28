@@ -1,0 +1,141 @@
+
+
+
+.footer {
+    padding: 10rem 0 ;
+    background-color: rgba($color-black , .8);
+
+
+    &__logo {
+        display: block ;
+        width: 10% ;
+        margin: 0 auto ;
+
+        @include respond(tab-port) {
+            width: 20% ;
+        }
+
+
+    }
+
+
+    &__content {
+        width: 100% ;
+        display: grid ;
+        grid-template-columns: 1fr 1fr ;
+
+        @include respond(tab-port) {
+            grid-template-columns:  1fr ;
+            row-gap: 6rem  ;
+        }
+
+    }
+
+    &__nav ,
+    &__copy-right {
+        padding-top: 2rem ;
+        border-top: .1rem solid $color-white ;
+
+        @include respond(tab-port) {
+            margin: 0 auto;
+        }
+
+    }
+
+    &__nav {
+        width: 55% ;
+        list-style: none ;
+        display: flex ;
+        flex-wrap: nowrap ;
+
+        @include respond(tab-port) {
+            width: 60% ;
+            justify-content: center ;
+        }
+
+        @include respond(phone) {
+            width: 100% ;
+            justify-content: center ;
+        }
+
+        @include respond(big-desktop) {
+            width: 57% ;
+        }
+
+    }
+
+    &__copy-right {
+        width: 65% ;
+        text-align: justify;
+        color: $color-white ;
+        font-size: 1.4rem ;
+        margin-left: auto ;
+
+        @include respond(tab-port) {
+            width: 60% ;
+            padding: 2rem 1rem 0 ;
+            text-align: center ;
+        }
+
+        @include respond(phone) {
+            width: 100% ;
+            padding: 2rem 3rem 0 ;
+        }
+
+        @include respond(big-desktop) {
+            font-size: 1.2rem ;
+        }
+
+    }
+
+
+    &__item {
+
+        &:not(:first-child) {
+            margin-left: 5%;
+        }
+
+    }
+
+    &__link {
+
+        & ,
+        &:link ,
+        &:visited {
+            display: inline-block ;
+            text-decoration: none ;
+            text-transform: uppercase ;
+            color: $color-white ;
+            font-size: 1.4rem ;
+            padding: .1rem ;
+            border-radius: 2rem ;
+            cursor: pointer;
+            transition: all .25s ;
+
+            @include respond(big-desktop) {
+                font-size: 1.2rem ;
+            }
+
+        }
+
+
+
+
+
+        &:hover {
+            box-shadow: .1rem .5rem 1.5rem rgba($color-black , .2);
+            color: $color-primary-medium ;
+            transform: rotate(5deg) scale(1.15);
+        }
+
+
+
+    }
+
+
+    
+
+}
+
+
+

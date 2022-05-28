@@ -1,0 +1,243 @@
+
+
+
+.cards {
+    width: 100% ;
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr ;
+    column-gap: 6rem ;
+
+    @include respond(tab-port) {
+        grid-template-columns:  1fr ;
+        row-gap: 5rem ;
+    }
+
+    @include respond(big-desktop) {
+        column-gap: 5rem ;
+    }
+
+}
+
+.card {
+    width: 100% ;
+    height: 45rem ;
+    position: relative ;
+    cursor: pointer;
+    perspective: 150rem ;
+    
+
+    @include respond(tab-port) {
+        height: auto ;
+        overflow: hidden ;
+        border-radius: 5rem ;
+        width: 70% ;
+        margin: 0 auto ;
+    }
+
+    @include respond(phone) {
+        width: 80% ;
+    }
+    
+    @include respond(big-desktop) {
+        height: 40rem 
+    }
+
+
+    &__side {
+        width: 100% ;
+        height: 45rem ;
+        border-radius: 5rem ;
+        box-shadow: .1rem .5rem 1.5rem .1rem rgba($color-black , .2);
+        position: absolute ;
+        top: 0 ;
+        left: 0 ;
+        backface-visibility: hidden ;
+        transition: all .85s ;
+        overflow: hidden ;
+        
+        @include respond(tab-port) {
+            position: relative;
+            backface-visibility: visible ;
+            border-radius: 0 ;
+        }
+
+        @include respond(big-desktop) {
+            height: 40rem 
+        }
+
+
+    }
+
+    &__side-back {
+        transform: rotateY(180deg);
+
+        @include respond(tab-port) {
+            transform: rotateY(0deg);
+        }
+
+        &--1 {
+            background-image: linear-gradient(to right ,
+            $color-secondary-light ,
+            $color-secondary-dark );
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right ,
+            $color-primary-light ,
+            $color-primary-dark );
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right ,
+            $color-tertiary-light ,
+            $color-tertiary-dark );
+        }
+
+    }
+
+    &:hover &__side {
+
+        &-front {
+            transform: rotateY(-180deg);
+
+            @include respond(tab-port) {
+                transform: rotateY(0deg);
+            }
+        }
+
+        &-back {
+            transform: rotateY(0deg);
+        }
+
+    }
+
+    &__picture {
+        width: 100% ;
+        height: 23rem ;
+        clip-path: ellipse(73% 66% at 50% 33%);
+        background-blend-mode: screen ;
+        background-size: cover ;
+
+        &--1 {
+            background-image: linear-gradient(to right , 
+            $color-secondary-light ,
+            $color-secondary-dark) ,
+            url(../../img/involve1.jpg) ;
+
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right , 
+            $color-primary-light ,
+            $color-primary-dark) ,
+            url(../../img/involve2.jpg) ;
+
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right , 
+            $color-tertiary-light ,
+            $color-tertiary-dark) ,
+            url(../../img/involve3.jpg) ;
+
+        }
+
+    }
+
+    &__heading {
+        position: absolute ;
+        top: 11rem ;
+        right: 2rem ;
+        text-align: right ;
+        
+    }
+    
+    &__heading-text {
+        font-size: 2.8rem ;
+        padding: 1rem 1.6rem ;
+        border-radius: 5rem ;
+        text-transform: uppercase ;
+        color: $color-white ;
+        font-weight: 300 ;
+        box-decoration-break: clone ;
+        line-height: 1.8;
+
+
+        @include respond(big-desktop) {
+            font-size: 2.4rem ;
+        }
+ 
+
+        &--1 {
+            background-image: linear-gradient(to bottom right ,
+            rgba($color-secondary-light , .85) ,
+            rgba($color-secondary-dark , .85) )
+        }
+
+        &--2 {
+            background-image: linear-gradient(to bottom right ,
+            rgba($color-primary-light , .85) ,
+            rgba($color-primary-dark , .85) )
+        }
+
+        &--3 {
+            background-image: linear-gradient(to bottom right,
+            rgba($color-tertiary-light , .85) ,
+            rgba($color-tertiary-dark , .85) )
+        }
+
+    }
+
+
+    &__details {
+        text-align: center ;
+        width: 100% ;
+        padding: 4rem 6rem ;
+        list-style: none ;
+
+        @include respond(big-desktop) {
+            padding: 2rem 5rem ;
+        }
+
+
+    }
+
+
+    &__item {
+        display: block ;
+        padding: 1rem ;
+        font-size: 1.5rem ;
+        color:  $color-grey-dark ;
+
+        &:not(:last-child) {
+            border-bottom: .1rem solid rgba($color-black , .1);
+        }
+
+        @include respond(big-desktop) {
+            font-size: 1.3rem ;
+        }
+
+
+    }
+
+    &__price-box {
+        position: absolute ;
+        width: 100% ;
+        top: 15% ;
+        text-align: center ;
+        color: $color-white;
+
+    }
+
+    &__only {
+        font-size: 1.5rem ;
+    }
+
+    &__price {
+        font-size: 6.2rem ;
+        font-weight: 100 ;
+        margin-bottom: 4rem ;
+    }
+
+}
+
