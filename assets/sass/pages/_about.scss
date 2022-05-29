@@ -14,7 +14,7 @@
     }
 
     @include respond(phone) {
-        row-gap: 4rem ;
+        row-gap: 5rem ;
         padding-bottom: 25rem ;
     }
 
@@ -44,6 +44,10 @@
         transition: all .2s ease-out ;
         outline-offset: 1rem ;
 
+
+        @include respond(phone) {
+            outline-offset: .8rem ;
+        }
 
         @include respond(tab-port) {
             width: 25% ;
@@ -94,6 +98,12 @@
             z-index: 10 ;
             transform: scale(1.1);
             outline: 1.6rem solid $color-primary-medium ;
+
+            @include respond(phone) {
+                outline: .8rem solid $color-primary-medium ;
+            }
+
+
         }
 
 
