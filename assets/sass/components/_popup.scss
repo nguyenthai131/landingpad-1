@@ -44,7 +44,6 @@
 
         @include respond(phone) {
             float: left;
-            height: auto;
         }
 
     }
@@ -58,7 +57,7 @@
         flex-shrink: 0;
 
         @include respond(phone) {
-            width: auto;
+            width: 100% ;
             height: auto;
             flex-shrink: 1;
             flex-grow: 0;

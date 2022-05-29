@@ -1607,7 +1607,6 @@ body {
 @media (max-width: 600px) {
   .popup-box__left {
     float: left;
-    height: auto;
   }
 }
 
@@ -1625,7 +1624,7 @@ body {
 
 @media (max-width: 600px) {
   .popup-box__picture {
-    width: auto;
+    width: 100%;
     height: auto;
     -ms-flex-negative: 1;
         flex-shrink: 1;
