@@ -14,7 +14,7 @@
     }
 
     @include respond(phone) {
-        row-gap: 5rem ;
+        row-gap: rem ;
         padding-bottom: 25rem ;
     }
 
